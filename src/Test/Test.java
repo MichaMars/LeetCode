@@ -1,5 +1,9 @@
 package Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Test {
 
 
@@ -15,11 +19,23 @@ public class Test {
 
 
 
+
         System.out.println(str1.compareTo(str2));
         System.out.println(str3.compareTo(str4));
         System.out.println(str1.compareTo(str3));
         System.out.println(str1.compareTo(str1));
 
-        System.out.println(str1 == str3 ? "true" : "false");
+        System.out.println(str1 == str3 ? true : false);
+
+        List<String> animals = new ArrayList<>();
+
+        animals.add("Lion");
+        animals.add("Zebra");
+        animals.add("Snake");
+        animals.add("Tiger");
+
+        List<String> updatedList = animals.stream().filter(animal -> animal.contains("e")).collect(Collectors.toList());
+        updatedList.stream().forEach(System.out::println);
+
     }
 }
